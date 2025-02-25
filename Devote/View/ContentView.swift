@@ -103,8 +103,12 @@ struct ContentView: View {
                         }
                         .onDelete(perform: deleteItems)
                     } //: LIST
+                    .listStyle(InsetGroupedListStyle())
                 } //: VSTACK
             } //: ZTSACK
+            .onAppear {
+                UITableView.appearance().backgroundColor = UIColor.clear
+            }
             .navigationBarTitle("Daily Tasks", displayMode: .large)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
