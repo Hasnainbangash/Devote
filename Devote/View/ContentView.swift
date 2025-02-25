@@ -13,10 +13,6 @@ struct ContentView: View {
     
     @State var task: String = ""
     
-    private var isButtonDisabled: Bool {
-        return task.isEmpty
-    }
-    
     // FETCHING DATA
     @Environment(\.managedObjectContext) private var viewContext
     
@@ -65,29 +61,7 @@ struct ContentView: View {
         NavigationView {
             ZStack {
                 VStack {
-                    VStack(spacing: 16) {
-                        TextField("New Task", text: $task)
-                            .padding()
-                            .background(
-                                Color(UIColor.systemGray6)
-                            )
-                            .cornerRadius(10)
-                        
-                        Button(action: {
-                            addItem()
-                        }, label: {
-                            Spacer()
-                            Text("SAVE")
-                            Spacer()
-                        })
-                        .disabled(isButtonDisabled)
-                        .padding()
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .background(isButtonDisabled ? Color.gray : Color.pink)
-                        .cornerRadius(10)
-                    } //: VSTACK
-                    .padding()
+                    
                     
                     List {
                         ForEach(items) { item in
