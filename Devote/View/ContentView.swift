@@ -121,7 +121,7 @@ struct ContentView: View {
                             }
                         }
                     
-                    NewTaskItemView()
+                    NewTaskItemView(isShowing: $showNewTaskItem)
                 }
                 
             } //: ZTSACK
