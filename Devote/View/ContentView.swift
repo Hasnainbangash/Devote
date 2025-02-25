@@ -15,12 +15,12 @@ struct ContentView: View {
     
     // FETCHING DATA
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    
     // MARK: - FUNCTION
     
     private func addItem() {
@@ -30,7 +30,7 @@ struct ContentView: View {
             newItem.task = task
             newItem.completion = false
             newItem.id = UUID()
-
+            
             do {
                 try viewContext.save()
             } catch {
@@ -39,11 +39,11 @@ struct ContentView: View {
             }
         }
     }
-
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
-
+            
             do {
                 try viewContext.save()
             } catch {                let nsError = error as NSError
@@ -82,11 +82,15 @@ struct ContentView: View {
                 
                 List {
                     ForEach(items) { item in
-                        NavigationLink {
+                        VStack(alignment: .leading) {
+                            Text(item.task ?? "")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                            
                             Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                        } label: {
-                            Text(item.timestamp!, formatter: itemFormatter)
-                        }
+                                .font(.footnote)
+                                .foregroundColor(.gray)
+                        } //: LIST ITEM
                     }
                     .onDelete(perform: deleteItems)
                 } //: LIST
