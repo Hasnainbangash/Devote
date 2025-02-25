@@ -61,6 +61,19 @@ struct ContentView: View {
                             Color(UIColor.systemGray6)
                         )
                         .cornerRadius(10)
+                    
+                    Button(action: {
+                        addItem()
+                    }, label: {
+                        Spacer()
+                        Text("SAVE")
+                        Spacer()
+                    })
+                    .padding()
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .background(Color.pink)
+                    .cornerRadius(10)
                 } //: VSTACK
                 .padding()
                 
