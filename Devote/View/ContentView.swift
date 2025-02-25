@@ -12,6 +12,7 @@ struct ContentView: View {
     // MARK: - PROPERTY
     
     @State var task: String = ""
+    @State var showNewTaskItem: Bool = false
     
     // FETCHING DATA
     @Environment(\.managedObjectContext) private var viewContext
@@ -60,8 +61,13 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                // MARK: - MAIN VIEW
                 VStack {
+                    // MARK: - HEADER
                     
+                    // MARK: - NEW TASK BUTTON
+                    
+                    // MARK: - TASKS
                     
                     List {
                         ForEach(items) { item in
@@ -84,6 +90,8 @@ struct ContentView: View {
                     .padding(.vertical, 0)
                     .frame(maxWidth: 640)
                 } //: VSTACK
+                
+                // MARK: - NEW TASK ITEM
             } //: ZTSACK
             .onAppear {
                 UITableView.appearance().backgroundColor = UIColor.clear
