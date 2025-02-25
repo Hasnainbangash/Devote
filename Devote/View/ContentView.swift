@@ -104,6 +104,8 @@ struct ContentView: View {
                         .onDelete(perform: deleteItems)
                     } //: LIST
                     .listStyle(InsetGroupedListStyle())
+                    // This code will hide the background of the list scroll view to make it clear
+                    .scrollContentBackground(.hidden)
                     .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.3), radius: 12)
                     .padding(.vertical, 0)
                     .frame(maxWidth: 640)
