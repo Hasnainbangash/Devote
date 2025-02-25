@@ -62,6 +62,7 @@ struct ContentView: View {
         NavigationView {
             ZStack {
                 // MARK: - MAIN VIEW
+                
                 VStack {
                     // MARK: - HEADER
                     
@@ -111,6 +112,18 @@ struct ContentView: View {
                 } //: VSTACK
                 
                 // MARK: - NEW TASK ITEM
+                
+                if showNewTaskItem {
+                    BlankView()
+                        .onTapGesture {
+                            withAnimation {
+                                showNewTaskItem = false
+                            }
+                        }
+                    
+                    NewTaskItemView()
+                }
+                
             } //: ZTSACK
             .onAppear {
                 UITableView.appearance().backgroundColor = UIColor.clear
