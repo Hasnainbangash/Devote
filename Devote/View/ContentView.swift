@@ -104,14 +104,17 @@ struct ContentView: View {
                         .onDelete(perform: deleteItems)
                     } //: LIST
                 } //: VSTACK
-                .navigationBarTitle("Daily Tasks", displayMode: .large)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        EditButton()
-                    }
-                } //: TOOLBAR
             } //: ZTSACK
-            Text("Select an item")
+            .navigationBarTitle("Daily Tasks", displayMode: .large)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    EditButton()
+                }
+            } //: TOOLBAR
+            .background(
+                backgroundGradient
+                    .ignoresSafeArea(.all)
+            )
         } //: NAVIGATION
         .navigationViewStyle(StackNavigationViewStyle())
     }
