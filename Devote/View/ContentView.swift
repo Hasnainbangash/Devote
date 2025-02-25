@@ -11,6 +11,8 @@ import CoreData
 struct ContentView: View {
     // MARK: - PROPERTY
     
+    @State var task: String = ""
+    
     // FETCHING DATA
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -52,6 +54,16 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
+                VStack(spacing: 16) {
+                    TextField("New Task", text: $task)
+                        .padding()
+                        .background(
+                            Color(UIColor.systemGray6)
+                        )
+                        .cornerRadius(10)
+                } //: VSTACK
+                .padding()
+                
                 List {
                     ForEach(items) { item in
                         NavigationLink {
