@@ -60,7 +60,7 @@ struct ContentView: View {
                     }
                 }
                 .onDelete(perform: deleteItems)
-            }
+            } //: LIST
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
@@ -70,9 +70,9 @@ struct ContentView: View {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
-            }
+            } //: TOOLBAR
             Text("Select an item")
-        }
+        } //: NAVIGATION
     }
 }
 
