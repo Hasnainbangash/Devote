@@ -21,6 +21,7 @@ struct ListRowItemView: View {
                 .padding(.vertical, 12)
                 .animation(.default)
         } //: TOGGLE
+        .toggleStyle(CheckboxStyle())
         // The first paramter is the publisher to subscribe it. Every time there is a change, then it will run the given action. The second parameter is the action that is triggered each time when an evetn happens in the closure. We are trying to save the new value safely and update the store by doing that
         .onReceive(item.objectWillChange) { _ in
             if self.viewContext.hasChanges {
