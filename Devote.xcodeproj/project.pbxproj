@@ -74,6 +74,13 @@
 			);
 			target = D0D0B0082D6F1DE700342366 /* DevoteWidgetExtension */;
 		};
+		D0D0B0242D6F393A00342366 /* Exceptions for "Devote" folder in "DevoteWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Assets.xcassets,
+			);
+			target = D0D0B0082D6F1DE700342366 /* DevoteWidgetExtension */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -81,6 +88,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				D0A69E582D6D9A94005DAE56 /* Exceptions for "Devote" folder in "Devote" target */,
+				D0D0B0242D6F393A00342366 /* Exceptions for "Devote" folder in "DevoteWidgetExtension" target */,
 			);
 			path = Devote;
 			sourceTree = "<group>";
