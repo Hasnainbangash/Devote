@@ -82,3 +82,17 @@ struct DevoteWidget: Widget {
     SimpleEntry(date: .now, emoji: "😀")
     SimpleEntry(date: .now, emoji: "🤩")
 }
+
+#Preview(as: .systemMedium) {
+    DevoteWidget()
+} timeline: {
+    SimpleEntry(date: .now, emoji: "😀")
+    SimpleEntry(date: .now, emoji: "🤩")
+}
+
+#Preview(as: .systemLarge) {
+    DevoteWidget()
+} timeline: {
+    SimpleEntry(date: .now, emoji: "😀")
+    SimpleEntry(date: .now, emoji: "🤩")
+}
