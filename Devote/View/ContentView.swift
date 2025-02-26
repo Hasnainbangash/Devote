@@ -65,6 +65,19 @@ struct ContentView: View {
                 
                 VStack {
                     // MARK: - HEADER
+                    HStack(spacing: 10) {
+                        // TITLE
+                        Text("Devote")
+                            .font(.system(.largeTitle, design: .rounded))
+                            .fontWeight(.heavy)
+                            .padding(.leading, 4)
+                        Spacer()
+                        
+                        // EDIT
+                        // APPEARANCE BUTTON
+                    } //: HSTACK
+                    .padding()
+                    .foregroundColor(.white)
                     
                     Spacer(minLength: 80)
                     
@@ -129,6 +142,7 @@ struct ContentView: View {
                 UITableView.appearance().backgroundColor = UIColor.clear
             }
             .navigationBarTitle("Daily Tasks", displayMode: .large)
+            .navigationBarHidden(true)
             .background(
                 BackgroundImageView()
             )
