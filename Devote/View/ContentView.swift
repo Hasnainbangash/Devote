@@ -83,7 +83,14 @@ struct ContentView: View {
                             )
                         
                         // APPEARANCE BUTTON
-                        
+                        Button(action: {
+                            // Toggle Apperance
+                        }, label: {
+                            Image(systemName: "moon.circle")
+                                .resizable()
+                                .frame(width: 24, height: 24)
+                                .font(.system(.title, design: .rounded))
+                        })
                         
                     } //: HSTACK
                     .padding()
