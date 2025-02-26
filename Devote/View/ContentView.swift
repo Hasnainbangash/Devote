@@ -123,22 +123,14 @@ struct ContentView: View {
                     
                     List {
                         ForEach(items) { item in
-                            VStack(alignment: .leading) {
-                                Text(item.task ?? "")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                
-                                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                                    .font(.footnote)
-                                    .foregroundColor(.gray)
-                            } //: LIST ITEM
+                            ListRowItemView(item: item)
                         }
                         .onDelete(perform: deleteItems)
                     } //: LIST
                     .listStyle(InsetGroupedListStyle())
                     // This code will hide the background of the list scroll view to make it clear
                     .scrollContentBackground(.hidden)
-                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.3), radius: 12)
+                    .shadow(color: Color(red: 0, green: 0, blue: 0,  opacity: 0.3), radius: 12)
                     .padding(.vertical, 0)
                     .frame(maxWidth: 640)
                 } //: VSTACK
