@@ -46,6 +46,9 @@ struct SimpleEntry: TimelineEntry {
 struct DevoteWidgetEntryView : View {
     var entry: Provider.Entry
     
+    // With this environment property wrapper and the widget family key we can get the actual size of any widget instance. Also we can always use this widget family environment value understand the current widget configuration size and present different views
+    @Environment(\.widgetFamily) var widgetFamily
+    
     var body: some View {
         /*
          // Original code
@@ -88,9 +91,13 @@ struct DevoteWidgetEntryView : View {
                                 .blendMode(.overlay)
                         )
                         .clipShape(Capsule())
+                    
+                    if widgetFamily != .systemSmall {
+                        Spacer()
+                    }
                 } //: HSTACK
                 .padding()
-                .offset(y: (geometry.size.width / 2) - 24)
+                .offset(y: (geometry.size.height / 2) - 24)
             } //: ZSTACK
         } //: GEOMETRY
     }
