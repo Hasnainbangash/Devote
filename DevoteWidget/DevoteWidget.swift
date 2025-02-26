@@ -49,6 +49,14 @@ struct DevoteWidgetEntryView : View {
     // With this environment property wrapper and the widget family key we can get the actual size of any widget instance. Also we can always use this widget family environment value understand the current widget configuration size and present different views
     @Environment(\.widgetFamily) var widgetFamily
     
+    var fontStyle: Font {
+        if widgetFamily == .systemSmall {
+            return .system(.footnote, design: .rounded)
+        } else {
+            return .system(.headline, design: .rounded)
+        }
+    }
+    
     var body: some View {
         /*
          // Original code
@@ -85,7 +93,7 @@ struct DevoteWidgetEntryView : View {
                 HStack {
                     Text("Just Do It")
                         .foregroundColor(.white)
-                        .font(.system(.footnote, design: .rounded))
+                        .font(fontStyle)
                         .fontWeight(.bold)
                         .padding(.horizontal, 12)
                         .padding(.vertical, 4)
