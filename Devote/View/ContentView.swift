@@ -145,11 +145,11 @@ struct ContentView: View {
                         backgroundColor: isDarkMode ? Color.black : Color.gray,
                         backgroundOpacity: isDarkMode ? 0.3 : 0.5
                     )
-                        .onTapGesture {
-                            withAnimation {
-                                showNewTaskItem = false
-                            }
+                    .onTapGesture {
+                        withAnimation {
+                            showNewTaskItem = false
                         }
+                    }
                     
                     NewTaskItemView(isShowing: $showNewTaskItem)
                 }
