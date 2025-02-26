@@ -78,6 +78,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Assets.xcassets,
+				Utility/Constant.swift,
 			);
 			target = D0D0B0082D6F1DE700342366 /* DevoteWidgetExtension */;
 		};
